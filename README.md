@@ -2,8 +2,7 @@
 An example project integrating React.js frontend with Go backend. This project demonstrates user authentication via Google OAuth 2.0
 (using [goth](https://github.com/markbates/goth/tree/master) library) and session management using secure cookies.
 
-## Demo
-[![Demo](https://img.youtube.com/vi/OIEf-HuxvRY/0.jpg)](https://www.youtube.com/watch?v=OIEf-HuxvRY)
+<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnRwbDB6cmN2emtiaXhpY3hydWI3ZGJtbGM0cHZ2dzEzZXAxaHA5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KtKvOlylZtd9oOJQNF/giphy.gif" width="400"/>
 
 ## Prerequisites
 1. **Install Dependencies**:
