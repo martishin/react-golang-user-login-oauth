@@ -41,7 +41,7 @@ An example project integrating React.js frontend with Go backend. This project d
 
 3. **Start the Database**:
    ```bash
-   docker-compose up
+   docker-compose up -d
    ```
 
 4. **Start the Backend Server**:
