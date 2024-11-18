@@ -3,6 +3,7 @@ package handlers
 import (
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/markbates/goth/gothic"
 	"github.com/martishin/react-golang-goth-auth/internal/database"
@@ -40,7 +41,12 @@ func GoogleCallbackHandler(db database.Service) http.HandlerFunc {
 		}
 
 		// Redirect to the secure area
-		http.Redirect(w, r, "http://localhost:5173/secure", http.StatusFound)
+		redirectSecure := os.Getenv("REDIRECT_SECURE")
+		if redirectSecure == "" {
+			redirectSecure = "http://localhost:5173/secure"
+		}
+
+		http.Redirect(w, r, redirectSecure, http.StatusFound)
 	}
 }
 

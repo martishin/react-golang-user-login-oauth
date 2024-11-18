@@ -34,6 +34,7 @@ An example project integrating React.js frontend with Go backend. This project d
     GOOGLE_CLIENT_ID=YOUR_GOOGLE_APP_CLIENT_ID
     GOOGLE_CLIENT_SECRET=YOUR_GOOGLE_CLIENT_SECRET
     GOOGLE_CALLBACK_URL=http://localhost:8100/auth/callback?provider=google
+    REDIRECT_SECURE=http://localhost:5173/secure
     SESSION_SECRET=YOUR_SESSION_SECRET
    ```
 
