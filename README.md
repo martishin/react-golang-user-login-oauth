@@ -48,7 +48,7 @@ An example project integrating React.js frontend with Go backend. This project d
    Navigate to the `server` directory:
    ```bash
    cd server
-   go run main.go
+   make run
    ```
 
    The backend will be running at [http://localhost:3000](http://localhost:3000).
