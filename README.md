@@ -25,23 +25,21 @@ An example project integrating React.js frontend with Go backend. This project d
 2. **Set Up Environment Variables**:
    Copy the .env.example file to .env in the root of the project and update the values as needed:
    ```env
-    PORT=3000
-    APP_ENV=local
-    BLUEPRINT_DB_HOST=localhost
-    BLUEPRINT_DB_PORT=5432
-    BLUEPRINT_DB_DATABASE=oauth
-    BLUEPRINT_DB_USERNAME=postgres
-    BLUEPRINT_DB_PASSWORD=postgres
-    BLUEPRINT_DB_SCHEMA=public
+    PORT=8100
+    DB_HOST=localhost
+    DB_PORT=5432
+    DB_DATABASE=oauth
+    DB_USERNAME=postgres
+    DB_PASSWORD=postgres
     GOOGLE_CLIENT_ID=YOUR_GOOGLE_APP_CLIENT_ID
     GOOGLE_CLIENT_SECRET=YOUR_GOOGLE_CLIENT_SECRET
-    GOOGLE_CALLBACK_URL=http://localhost:3000/auth/callback?provider=google
+    GOOGLE_CALLBACK_URL=http://localhost:8100/auth/callback?provider=google
     SESSION_SECRET=YOUR_SESSION_SECRET
    ```
 
 3. **Start the Database**:
    ```bash
-   docker-compose up -d
+   docker compose up db -d
    ```
 
 4. **Start the Backend Server**:

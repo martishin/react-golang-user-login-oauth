@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "./Card.tsx";
+import { getOauthApiUrl } from '../config.ts'
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
+  const OAUTH_API_URL = getOauthApiUrl();
 
   useEffect(() => {
     const checkUserStatus = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/user", {
+        const res = await fetch(`${OAUTH_API_URL}/api/user`, {
           credentials: "include",
         });
         if (res.ok) {
@@ -30,7 +32,7 @@ const Login: React.FC = () => {
         </p>
         <div className="flex justify-center mb-4">
           <a
-            href="http://localhost:3000/auth?provider=google"
+            href={`${OAUTH_API_URL}/auth?provider=google`}
             className="flex items-center gap-3 rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5">
