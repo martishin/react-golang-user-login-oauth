@@ -30,18 +30,22 @@ func init() {
 	}
 
 	// Configure session store
-	sessionKey := os.Getenv("SESSION_KEY")
-	if sessionKey == "" {
-		sessionKey = "default-session-key"
+	sessionSecret := os.Getenv("SESSION_SECRET")
+	if sessionSecret == "" {
+		sessionSecret = "default-session-secret"
 	}
+	log.Println("session key: ", sessionSecret)
 
-	store := sessions.NewCookieStore([]byte(sessionKey))
+	store := sessions.NewCookieStore([]byte(sessionSecret))
 
 	isProduction := os.Getenv("ENV") == "production"
+	log.Println("is production: ", isProduction)
+
 	domain := os.Getenv("SESSION_COOKIE_DOMAIN")
 	if domain == "" {
 		domain = "localhost"
 	}
+	log.Println("domain: ", domain)
 
 	store.Options = &sessions.Options{
 		HttpOnly: true,
