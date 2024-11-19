@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "./Card.tsx";
+import { getOauthApiUrl } from "../config.ts";
 
 interface UserDetails {
   name: string;
@@ -11,10 +12,11 @@ interface UserDetails {
 const Secure: React.FC = () => {
   const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
+  const OAUTH_API_URL = getOauthApiUrl();
 
   const fetchUserDetails = async () => {
     try {
-      const res = await fetch("/api/user", {
+      const res = await fetch(`${OAUTH_API_URL}/api/user`, {
         credentials: "include",
       });
 
@@ -36,7 +38,7 @@ const Secure: React.FC = () => {
 
   const handleLogout = async () => {
     try {
-      await fetch("/auth/logout", {
+      await fetch(`${OAUTH_API_URL}/auth/logout`, {
         credentials: "include",
       });
       setUserDetails(null);

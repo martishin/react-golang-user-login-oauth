@@ -1,24 +1,8 @@
 {
     "rewrites": [
         {
-            "source": "/api/:path*",
-            "destination": "https://oauth-api.martishin.com/api/:path*"
-        },
-        {
-            "source": "/auth/callback",
-            "destination": "https://oauth-api.martishin.com/auth/callback"
-        },
-        {
-            "source": "/auth/logout",
-            "destination": "https://oauth-api.martishin.com/auth/logout"
-        },
-        {
-            "source": "/auth",
-            "destination": "https://oauth-api.martishin.com/auth"
-        },
-        {
-            "source": "/secure",
-            "destination": "/index.html"
+            "source": "/(.*)",
+            "destination": "/"
         }
     ]
 }
