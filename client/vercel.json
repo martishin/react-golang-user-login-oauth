@@ -1,6 +1,14 @@
 {
     "rewrites":  [
         {
+            "source": "/api/:path*",
+            "destination": "https://oauth-api.martishin.com/api/:path*"
+        },
+        {
+            "source": "/auth/:path*",
+            "destination": "https://oauth-api.martishin.com/auth/:path*"
+        },
+        {
             "source": "/(.*)",
             "destination": "/"
         }
