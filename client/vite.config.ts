@@ -7,12 +7,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:8100', // Your local backend URL
         changeOrigin: true,
-        secure: false, // Disable SSL verification for local development
+        secure: false,
       },
       '/auth': {
-        target: 'http://localhost:8100', // Your local backend URL
         changeOrigin: true,
         secure: false,
       },
