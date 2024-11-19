@@ -36,11 +36,15 @@ func init() {
 
 	store := sessions.NewCookieStore([]byte(sessionKey))
 
+	isProduction := os.Getenv("ENV") == "production"
+	domain := os.Getenv("SESSION_COOKIE_DOMAIN")
+
 	store.Options = &sessions.Options{
 		HttpOnly: true,
-		Secure:   false, // Set to true in production
+		Secure:   isProduction, // Enable secure cookies in production
 		Path:     "/",
 		MaxAge:   86400 * 30, // 30 days
+		Domain:   domain,
 	}
 
 	gothic.Store = store
