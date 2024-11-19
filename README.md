@@ -15,7 +15,7 @@ An example project integrating React.js frontend with Go backend. This project d
 2. **Set Up Google OAuth Credentials**:
     - Create a project in [Google Developer Console](https://console.developers.google.com/).
     - Generate a **Client ID** and **Client Secret**.
-    - Set the redirect URI to `http://localhost:3000/auth/callback?provider=google`.
+    - Set the redirect URI to `http://localhost:8100/auth/callback?provider=google`.
 
 ## Getting Started
 
@@ -55,7 +55,7 @@ An example project integrating React.js frontend with Go backend. This project d
    make run
    ```
 
-   The backend will be running at [http://localhost:3000](http://localhost:3000).
+   The backend will be running at [http://localhost:8100](http://localhost:8100).
 
 5. **Start the Frontend**:
    Navigate to the `client` directory:
