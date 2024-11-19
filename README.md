@@ -4,6 +4,8 @@ An example project integrating React.js frontend with Go backend. This project d
 
 <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnRwbDB6cmN2emtiaXhpY3hydWI3ZGJtbGM0cHZ2dzEzZXAxaHA5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KtKvOlylZtd9oOJQNF/giphy.gif" width="400"/>
 
+[Check out the live demo here](https://oauth.martishin.com/)!
+
 ## Prerequisites
 1. **Install Dependencies**:
     - [Docker](https://www.docker.com/products/docker-desktop)
