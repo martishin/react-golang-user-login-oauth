@@ -20,8 +20,8 @@ An example project integrating React.js frontend with Go backend. This project d
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/martishin/react-golang-goth-oauth
-   cd react-golang-goth-auth
+   git clone https://github.com/martishin/react-golang-oauth
+   cd react-golang-auth
    ```
 
 2. **Set Up Environment Variables**:
