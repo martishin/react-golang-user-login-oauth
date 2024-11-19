@@ -1,19 +1,23 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
-  server: {
-    proxy: {
-      '/api': {
-        changeOrigin: true,
-        secure: false,
-      },
-      '/auth': {
-        changeOrigin: true,
-        secure: false,
-      },
-    },
-  },
-});
+  server:
+    mode === "development"
+      ? {
+          proxy: {
+            "/api": {
+              target: "http://localhost:8100",
+              changeOrigin: true,
+              secure: false,
+            },
+            "/auth": {
+              target: "http://localhost:8100",
+              changeOrigin: true,
+              secure: false,
+            },
+          },
+        }
+      : undefined, // No proxy in production
+}));
