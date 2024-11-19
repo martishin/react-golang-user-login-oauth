@@ -25,17 +25,19 @@ An example project integrating React.js frontend with Go backend. This project d
 2. **Set Up Environment Variables**:
    Copy the .env.example file to .env in the root of the project and update the values as needed:
    ```env
-    PORT=8100
-    DB_HOST=localhost
-    DB_PORT=5432
-    DB_DATABASE=oauth
-    DB_USERNAME=postgres
-    DB_PASSWORD=postgres
-    GOOGLE_CLIENT_ID=YOUR_GOOGLE_APP_CLIENT_ID
-    GOOGLE_CLIENT_SECRET=YOUR_GOOGLE_CLIENT_SECRET
-    GOOGLE_CALLBACK_URL=http://localhost:8100/auth/callback?provider=google
-    REDIRECT_SECURE=http://localhost:5173/secure
-    SESSION_SECRET=YOUR_SESSION_SECRET
+   PORT=8100
+   DB_HOST=localhost
+   DB_PORT=5432
+   DB_DATABASE=oauth
+   DB_USERNAME=postgres
+   DB_PASSWORD=postgres
+   GOOGLE_CLIENT_ID=YOUR_GOOGLE_APP_CLIENT_ID
+   GOOGLE_CLIENT_SECRET=YOUR_GOOGLE_CLIENT_SECRET
+   GOOGLE_CALLBACK_URL=http://localhost:8100/auth/callback?provider=google
+   REDIRECT_SECURE=http://localhost:5173/secure
+   SESSION_COOKIE_DOMAIN=localhost
+   ENV=local
+   SESSION_SECRET=YOUR_SESSION_SECRET
    ```
 
 3. **Start the Database**:

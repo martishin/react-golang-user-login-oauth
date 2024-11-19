@@ -39,6 +39,9 @@ func init() {
 
 	isProduction := os.Getenv("ENV") == "production"
 	domain := os.Getenv("SESSION_COOKIE_DOMAIN")
+	if domain == "" {
+		domain = "localhost"
+	}
 
 	store.Options = &sessions.Options{
 		HttpOnly: true,
