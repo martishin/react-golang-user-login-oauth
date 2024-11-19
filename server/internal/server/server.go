@@ -2,6 +2,7 @@ package server
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"strconv"
@@ -25,13 +26,13 @@ func init() {
 	callbackURL := os.Getenv("GOOGLE_CALLBACK_URL")
 
 	if clientID == "" || clientSecret == "" || callbackURL == "" {
-		panic("Google OAuth environment variables are not set in .env")
+		log.Println("Error: Google OAuth environment variables are not set in .env")
 	}
 
 	// Configure session store
 	sessionKey := os.Getenv("SESSION_KEY")
 	if sessionKey == "" {
-		sessionKey = "default-session-key" // Use a default key if not set
+		sessionKey = "default-session-key"
 	}
 
 	store := sessions.NewCookieStore([]byte(sessionKey))
