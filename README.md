@@ -6,6 +6,12 @@ It uses Google OAuth 2.0 for secure login and cookies for session management.
 
 <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnRwbDB6cmN2emtiaXhpY3hydWI3ZGJtbGM0cHZ2dzEzZXAxaHA5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KtKvOlylZtd9oOJQNF/giphy.gif" width="400"/>
 
+## How OAuth 2.0 works 
+1. The app redirects you to Google’s login page
+2. After you log in, Google asks if you’re okay sharing specific data (scopes) with the app
+3. If you agree, Google redirects you to the app's predefined callback URL, passing along the temporary authorization code as a query parameter
+4. The app exchanges this code for a secure access token and optionally a refresh token, which allows the app to request new access tokens without requiring you to log in again
+5. Using the access token, the app fetches your data (like your email and name) from Google’s APIs
 
 ## Prerequisites
 1. **Install Dependencies**:
