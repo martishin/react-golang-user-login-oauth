@@ -50,7 +50,7 @@ const Secure: React.FC = () => {
   return (
     <>
       {userDetails ? (
-        <div className="flex items-center justify-center h-screen w-screen bg-gray-100 bg-gradient-to-br from-gray-100 to-gray-200 font-sans">
+        <div className="flex flex-col items-center justify-center h-screen w-screen bg-gray-100 bg-gradient-to-br from-gray-100 to-gray-200 font-sans">
           <Card>
             {userDetails.picture && (
               <img

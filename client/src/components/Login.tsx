@@ -22,7 +22,7 @@ const Login: React.FC = () => {
   }, [navigate]);
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gradient-to-br from-gray-100 to-gray-300">
+    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-gray-100 to-gray-300">
       <Card>
         <h1 className="text-3xl font-bold text-gray-800 text-center mb-6">Welcome Back</h1>
         <p className="text-gray-600 text-center mb-6">
