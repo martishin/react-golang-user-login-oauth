@@ -6,7 +6,7 @@ It uses Google OAuth 2.0 for secure login and cookies for session management.
 
 <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnRwbDB6cmN2emtiaXhpY3hydWI3ZGJtbGM0cHZ2dzEzZXAxaHA5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KtKvOlylZtd9oOJQNF/giphy.gif" width="400"/>
 
-## How OAuth 2.0 works 
+## How OAuth 2.0 Works 
 OAuth 2.0 is a protocol that allows apps to securely delegate authentication to providers like Google. The flow looks like this:
 1. The app redirects you to the provider's login page
 2. After you log in, the provider asks if you’re okay with sharing specific data (scopes) with the app
