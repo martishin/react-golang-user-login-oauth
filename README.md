@@ -1,6 +1,5 @@
 # React-Golang OAuth Example
-An example project integrating React.js frontend with Go backend. This project demonstrates user authentication via Google OAuth 2.0
-(using [goth](https://github.com/markbates/goth/tree/master) library) and session management using secure cookies.
+An example project demonstrating user authentication and authorization with a React.js frontend and a Go backend. It uses Google OAuth 2.0 for secure login and cookies for session management.
 
 [Check out the live demo here](https://oauth.martishin.com/)!
 
