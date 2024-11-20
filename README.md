@@ -1,4 +1,4 @@
-# React-Golang OAuth Example
+# React and Go OAuth Example
 An example project demonstrating user authentication and authorization built with React.js and Go.  
 It uses Google OAuth 2.0 for secure login and cookies for session management.
 
