@@ -14,7 +14,7 @@ const Card: React.FC<CardProps> = ({ children }) => {
         <p>
           Check out the code on{" "}
           <a
-            href="https://github.com/martishin/react-golang-oauth"
+            href="https://github.com/martishin/react-golang-oauth-login"
             target="_blank"
             className="underline text-gray-500 hover:text-gray-700"
           >
