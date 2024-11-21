@@ -28,7 +28,7 @@ OAuth 2.0 is a protocol that allows apps to securely delegate authentication to 
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/martishin/react-golang-oauth
+   git clone https://github.com/martishin/react-golang-oauth-login
    cd react-golang-auth
    ```
 
