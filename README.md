@@ -52,7 +52,7 @@ OAuth 2.0 is a protocol that allows apps to securely delegate authentication to 
 
 3. **Start the Database**:
    ```bash
-   docker compose up db -d
+   docker compose up db pgadmin -d
    ```
 
 4. **Start the Backend Server**:
@@ -73,6 +73,10 @@ OAuth 2.0 is a protocol that allows apps to securely delegate authentication to 
    ```
 
    The frontend will be available at [http://localhost:5173](http://localhost:5173).
+
+6. **Veiw table in pgAdmin**:
+
+   The portal will be available at [http://localhost:5050](http://localhost:5050).
 
 ## API Endpoints
 
