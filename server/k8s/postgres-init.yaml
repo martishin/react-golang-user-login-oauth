@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-init
+  namespace: react-golang-user-login-oauth
+data:
+  create_tables.sql: |
+    CREATE TABLE users
+    (
+        id      serial PRIMARY KEY,
+        name    text NOT NULL,
+        email   text NOT NULL UNIQUE,
+        picture text
+    );

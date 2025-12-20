@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-login-api
+  namespace: react-golang-user-login-oauth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-login-api
+  template:
+    metadata:
+      labels:
+        app: user-login-api
+    spec:
+      containers:
+        - name: user-login-api
+          image: ghcr.io/martishin/react-golang-user-login-oauth:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8100
+          env:
+            - name: PORT
+              value: "8100"
+          envFrom:
+            - secretRef:
+                name: user-login-api-env
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8100
+            initialDelaySeconds: 3
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8100
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 100m
+              memory: 256Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-login-api
+  namespace: react-golang-user-login-oauth
+spec:
+  selector:
+    app: user-login-api
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8100
+      protocol: TCP
