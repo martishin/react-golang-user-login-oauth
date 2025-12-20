@@ -3,8 +3,7 @@ name: client-image
 on:
   push:
     branches: [ "main" ]
-    tags:
-      - "v*.*.*"
+    tags: [ "v*.*.*" ]
   workflow_dispatch:
 
 permissions:
@@ -26,27 +25,19 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # On tag pushes: publish :<tag> and :latest
-      # On main pushes: publish only :latest
-      - name: Compute image tags
-        id: tags
-        shell: bash
-        run: |
-          IMAGE="ghcr.io/${GITHUB_REPOSITORY}-client"
-          if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
-            echo "tags<<EOF" >> "$GITHUB_OUTPUT"
-            echo "${IMAGE}:${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
-            echo "${IMAGE}:latest" >> "$GITHUB_OUTPUT"
-            echo "EOF" >> "$GITHUB_OUTPUT"
-          else
-            echo "tags<<EOF" >> "$GITHUB_OUTPUT"
-            echo "${IMAGE}:latest" >> "$GITHUB_OUTPUT"
-            echo "EOF" >> "$GITHUB_OUTPUT"
-          fi
+      - name: Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository }}-client
+          tags: |
+            type=raw,value=latest
+            type=sha,format=short,prefix=sha-
 
       - uses: docker/build-push-action@v6
         with:
           context: ./client
           file: ./client/Dockerfile
           push: true
-          tags: ${{ steps.tags.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
