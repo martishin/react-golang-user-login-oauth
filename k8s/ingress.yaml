@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: user-login-api
+  name: oauth
   namespace: react-golang-user-login-oauth
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
@@ -10,15 +10,29 @@ spec:
   tls:
     - hosts:
         - oauth.martishin.com
-      secretName: user-login-api-tls
+      secretName: oauth-tls
   rules:
     - host: oauth.martishin.com
       http:
         paths:
-          - path: /
+          - path: /api
             pathType: Prefix
             backend:
               service:
                 name: user-login-api
+                port:
+                  number: 80
+          - path: /auth
+            pathType: Prefix
+            backend:
+              service:
+                name: user-login-api
+                port:
+                  number: 80
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: user-login-client
                 port:
                   number: 80

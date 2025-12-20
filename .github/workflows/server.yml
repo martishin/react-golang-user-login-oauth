@@ -45,6 +45,7 @@ jobs:
 
       - uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./server
+          file: ./server/Dockerfile
           push: true
           tags: ${{ steps.tags.outputs.tags }}

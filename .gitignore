@@ -159,7 +159,7 @@ web_modules/
 # dotenv environment variable files
 .env
 .env.*
-!.env.example
+!server/.env.example
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -233,3 +233,7 @@ dist
 
 # Go workspace file
 go.work
+
+# Vim backup files
+*~
+*.un~
